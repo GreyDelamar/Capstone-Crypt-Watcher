@@ -93,10 +93,23 @@ a {
   border-radius: 6vw;
 }
 
-.tablerow {
-  font-size: 1.3em;
+.google-visualization-table-table {
+  font-size: 1.3em !important;
 }
 
 .tablehead {
   font-size: 1.5em;
+}
+
+.frontwell {
+  margin-top: 4em;
+  opacity: .9;
+}
+
+.frontjumbo {
+  opacity: .9;
+}
+
+.frontjumbo h1 {
+  text-align: center;
 }

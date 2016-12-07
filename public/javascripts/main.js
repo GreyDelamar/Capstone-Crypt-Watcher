@@ -4,29 +4,24 @@ $(document).ready(function() {
   // });
   $.get("https://api.coinmarketcap.com/v1/ticker/")
     .then(function(Rates) {
+      console.log(Rates)
+google.charts.load('current', {'packages':['table']});
+      google.charts.setOnLoadCallback(drawTable);
+
+      function drawTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Crypto-Currencies');
+        data.addColumn('string', 'Coin Symbol');
+        data.addColumn('string', 'Cost in USD');
+        data.addColumn('string', '% 1h');
+        data.addColumn('string', '% 24h');
+        data.addRows(Rates.map(v => [v.id,v.symbol,v.price_usd,v.percent_change_1h,v.percent_change_24h]));
+
+        var table = new google.visualization.Table(document.getElementById('table_div'));
+
+        table.draw(data, {showRowNumber: true, width: '100%', height: '100%', page:'enable', pageSize: 20});
+      }
       for (i in Rates) {
-        var tr = $("<tr>");
-        var td = $("<td>");
-        $(".tablerow").append(tr);
-
-        var td1 = $("<td>");
-        tr.append(td1)
-        td1.text(Rates[i].name)
-
-        var td2 = $("<td>");
-        tr.append(td2)
-        td2.text("1 " + Rates[i].symbol)
-
-        var td3 = $("<td>")
-        tr.append(td3)
-        td3.text("$ " + Rates[i].price_usd)
-
-        var td4 = $("<td>")
-        tr.append(td4)
-        td4.text(Rates[i].percent_change_1h);
-
-        tr.append(td)
-        td.text(Rates[i].percent_change_24h)
 
         var opt = $("<option>")
         $("#coinselect").append(opt);
