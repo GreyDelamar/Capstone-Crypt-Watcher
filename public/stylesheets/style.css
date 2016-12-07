@@ -37,8 +37,8 @@ a {
   margin-left: 43.3vw;
 }
 
-.coinselect {
-  width: 100vw;
+.coinselect option {
+  font-size: 1.3em;
 }
 
 .labelstyle {
@@ -49,7 +49,8 @@ a {
 .dashboardsenter {
   margin-top: 6vh;
   margin-bottom: 4vh;
-  margin-left: 39vw;
+  width: 100%;
+  text-align: center;
 }
 
 .submitbtn {
@@ -90,4 +91,12 @@ a {
 .titleback {
   background-color: #ffffff;
   border-radius: 6vw;
+}
+
+.tablerow {
+  font-size: 1.3em;
+}
+
+.tablehead {
+  font-size: 1.5em;
 }
