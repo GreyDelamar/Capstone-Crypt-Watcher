@@ -29,10 +29,10 @@ router.get('/member', function(req, res, next) {
           user_id
         })
       })
-      .catch(err){
+      .catch(function(err){
         console.log(err);
         res.redirect('/member')
-      }
+      })
   } else {
     res.redirect('/users/login')
   }
