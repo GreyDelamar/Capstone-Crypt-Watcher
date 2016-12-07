@@ -27,12 +27,12 @@ router.get('/member', function(req, res, next) {
           stuff: data,
           phonenumber: data1.phonenumber,
           user_id
-        });
-        .catch(err){
-          console.log(err);
-          res.redirect('/member')
-        }
+        })
       })
+      .catch(err){
+        console.log(err);
+        res.redirect('/member')
+      }
   } else {
     res.redirect('/users/login')
   }
