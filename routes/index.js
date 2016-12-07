@@ -28,6 +28,10 @@ router.get('/member', function(req, res, next) {
           phonenumber: data1.phonenumber,
           user_id
         });
+        .catch(err){
+          console.log(err);
+          res.redirect('/member')
+        }
       })
   } else {
     res.redirect('/users/login')
