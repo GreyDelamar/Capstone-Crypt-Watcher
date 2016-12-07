@@ -1,0 +1,27 @@
+<h1 class="dashboardsenter">Dashboard</h1>
+
+<h3><b>Phone Number :</b> <span> {{phonenumber}} </span></h3>
+
+<h3><b>Coins being watched :</b></h3>
+<div class="well well-lg wellctrl">
+    {{#each stuff}}
+        <h4><b>{{this.currencies}}</b> % {{this.currenciesP}}</h4>
+    {{/each}}
+</div>
+
+<form class="form" action="/addcurrencies" method="post">
+    <label name="currencies" class="labelstyle"><b>Pick the Currency :</b></label>
+
+    <select multiple="multiple" id="coinselect" class="coinselect bottomspace" name="currencies"></select>
+
+    <label for="currencies%" class="labelstyle"><b>Choose the % Change :</b></label>
+    <br>
+    <input type="text" name="currenciesP" class="coinselect bottomspace">
+    <br>
+    <label for="number" class="labelstyle"><b>Phone Number :</b></label>
+    <br>
+    <input type="number" name="phonenumber" class="coinselect bottomspace">
+    <br>
+    <br>
+    <input type="submit" class="submitbtn">
+</form>
