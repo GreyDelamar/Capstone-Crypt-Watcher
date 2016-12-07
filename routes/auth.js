@@ -16,7 +16,8 @@ router.post('/signup', function(req, res, next) {
       let hash = bcrypt.hashSync(req.body.password, 10);
       Users().insert({
         email: req.body.email,
-        password: hash
+        password: hash,
+        phonenumber: req.body.phonenumber
       }).then(function() {
         req.flash('info', 'Thanks for signing up.');
         res.redirect('/');

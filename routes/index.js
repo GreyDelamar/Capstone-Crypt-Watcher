@@ -22,12 +22,14 @@ router.get('/member', function(req, res, next) {
   if (user_id) {
     query.currenciesbyuser(user_id)
       .then(function(data) {
-        var data1 = data[0]
-        res.render('loggedin', {
-          stuff: data,
-          phonenumber: data1.phonenumber,
-          user_id
-        })
+        query.getallusers()
+          .then(function(datauser){
+            res.render('loggedin', {
+              phonenumber: datauser[0].phonenumber,
+              stuff: data,
+              user_id
+            })
+          })
       })
       .catch(function(err){
         console.log(err);
@@ -42,8 +44,7 @@ router.post('/addcurrencies', function(req, res, next) {
   var user_id = req.signedCookies.userID;
   var currencies = req.body.currencies;
   var currenciesP = req.body.currenciesP;
-  var phonenumber = req.body.phonenumber;
-  query.addcurrencies(user_id, currencies, currenciesP, phonenumber)
+  query.addcurrencies(user_id, currencies, currenciesP)
     .then(function(data) {
       res.redirect('/member')
     })
@@ -51,7 +52,7 @@ router.post('/addcurrencies', function(req, res, next) {
 
 router.get('/twilio', function(req, res, next) {
   var user_id = req.signedCookies.userID;
-  query.currenciesbyuser(user_id)
+  query.getallusers(user_id)
     .then(function(data) {
       var data1 = data[0];
       var phonenumber = data1.phonenumber;

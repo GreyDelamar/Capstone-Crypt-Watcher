@@ -8,7 +8,7 @@ a {
 }
 
 .maintitle {
-  margin: 5vw 0vw 5vw 35vw;
+  margin: 0 0 5vw 35vw;
 }
 
 .frontpagesign {
@@ -66,4 +66,20 @@ a {
 .wellctrl {
   max-height: 14vh;
   overflow: scroll;
+}
+
+#phonenumber {
+  width: 100vw;
+}
+
+.backimg {
+  margin-top: 0;
+  background-image: url('../images/CryptoWorld.jpg');
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
+
+#nav {
+  margin-bottom: 0;
 }

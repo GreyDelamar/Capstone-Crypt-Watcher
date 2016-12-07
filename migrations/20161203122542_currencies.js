@@ -5,7 +5,6 @@ exports.up = function(knex, Promise) {
     table.string('user_id');
     table.string('currencies')
     table.string('currenciesP')
-    table.string('phonenumber')
   });
 };
 
