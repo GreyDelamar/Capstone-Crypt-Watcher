@@ -47,14 +47,14 @@ a {
 }
 
 .dashboardsenter {
-  margin-top: 6vh;
-  margin-bottom: 4vh;
+  margin-top: 4vh;
+  margin-bottom: 3vh;
   width: 100%;
   text-align: center;
 }
 
 .submitbtn {
-  margin-left: 39vw;
+  margin-left: 35vw;
   width: 12vw;
   height: 7vh;
 }
