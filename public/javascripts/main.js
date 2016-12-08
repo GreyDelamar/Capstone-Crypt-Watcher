@@ -31,6 +31,13 @@ $(document).ready(function() {
       for (i in Rates) {
 
         var opt = $("<option>")
+        $("#coinmultiselect").append(opt);
+        opt.text(Rates[i].name)
+        opt.attr("value", Rates[i].name)
+      }
+      for (i in Rates) {
+
+        var opt = $("<option>")
         $("#coinselect").append(opt);
         opt.text(Rates[i].name)
         opt.attr("value", Rates[i].price_btc)
