@@ -57,7 +57,7 @@ router.get('/twilio', function(req, res, next) {
       var data1 = data[0];
       var phonenumber = data1.phonenumber;
       client.sendMessage({
-        to: phonenumber,
+        to: '+1'+phonenumber,
         from: '+16162025090',
         body: 'Crypt-Watcher: '+ data1.currencies + ' has just changes by % '+data1.currenciesP
       }, function(err, data) {
