@@ -59,7 +59,7 @@ router.get('/twilio', function(req, res, next) {
       client.sendMessage({
         to: '+1'+phonenumber,
         from: '+16162025090',
-        body: 'Crypt-Watcher: '+ data1.currencies + ' has just changes by % '+data1.currenciesP
+        body: 'Crypt-Watcher: Bitcoin has just changes by % .4'
       }, function(err, data) {
         if (err) {
           console.log(err);
